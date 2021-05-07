@@ -1,0 +1,17 @@
+local number = script.Parent
+local pulse = number:WaitForChild("Pulse")
+
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut)
+wait(5)
+	
+	local pulseClone = pulse:Clone()
+	pulseClone.Parent = number
+	
+	local tweenFade = tweenService:Create(pulseClone, tweenInfo, {TextTransparency = 1})
+	
+	pulseClone:TweenSize(UDim2.new(2, 0, 2, 0), Enum.EasingDirection.In, Enum.EasingStyle.Quint, 1)
+tweenFade:Play()
+wait(1)
+
+
